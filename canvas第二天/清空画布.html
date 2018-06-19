@@ -1,0 +1,21 @@
+<html>
+<head></head>	
+<body>
+	<canvas id="myCanvas" style="1px solid black" width="300" height="200"></canvas>
+	<input name="" type="button" value="画曲线" onclick="paint();"/>
+	<input name="" type="button" value="清空画布" onclick="clearMap();"/>
+<script>
+	var c=document.getElementById('myCanvas');
+	var context=c.getContext("2d");
+	function paint(){
+		context.strokeStyle="#FF00FF";
+		context.beginPath();
+		context.arc(200,150,100,-Math.PI*1.6,-Math.PI*5/6,true);
+		context.stroke();
+	}
+	function clearMap(){
+		context.clearRect(0,0,300,200);
+	}
+</script>
+</body>
+</html>

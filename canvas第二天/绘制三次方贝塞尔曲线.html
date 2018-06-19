@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<canvas id="myCanvas" style="border:1px solid black" width="300" height="200"></canvas>
+		<script>
+			var c=document.getElementById('myCanvas');
+			var context=c.getContext('2d');
+			//下面开始绘制三次方贝塞尔曲线
+			context.strokeStyle="dark";
+			context.beginPath();
+			context.moveTo(0,200);//开始点坐标
+			context.bezierCurveTo(25,50,75,50,300,200);   
+			//绘制三次方贝塞尔曲线的方法
+			//参数(第一个贝塞尔控制点的 x 坐标，第一个贝塞尔控制点的 y 坐标，第二个贝塞尔控制点的 x 坐标，第二个贝塞尔控制点的 y 坐标,结束点的 x 坐标,结束点的 y 坐标)
+			context.stroke();
+			context.globalCompositeOperation="source-over";
+			//下面绘制的直线用于表示上面曲线的控制点和控制线,控制点坐标为(25,50)和(75,50)
+			context.strokeStyle="#FF00FF";
+			context.beginPath();
+			context.moveTo(25,50);
+			context.lineTo(0,200);
+			context.moveTo(75,50);
+			context.lineTo(300,200);
+			context.stroke();
+		</script>
+	</body>
+</html>
